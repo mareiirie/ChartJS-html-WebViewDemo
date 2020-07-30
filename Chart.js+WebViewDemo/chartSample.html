@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+            　<title>グラフ</title>
+    </head>
+    <body>
+        <h1>WebViewのタイトル</h1>
+        <canvas id="myBarChart"></canvas>
+        <!-- Chart.jsをnpmでインストールしてアプリに持たせる事で完全にローカルで使用することも可能。その場合は、src="Chart.js"にのようにファイル名を指定する。相対パスなどの指定ではないことに注意。 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+        <script>
+
+
+            function getDatas(val) {
+
+                var data = val.split('&')
+                var XData = data[0].split(',')
+                var YData = data[1].split(',')
+
+                var ctx = document.getElementById("myBarChart");
+
+                var myBarChart = new Chart(ctx, {
+                                           type: 'bar',
+                                           data: {
+                                           labels: XData,
+                                           datasets: [
+                                                      {
+                                                      label: 'Y軸の値',
+                                                      data: YData,
+                                                      backgroundColor: "rgba(219,39,91,0.5)"
+                                                      }
+                                                      ]
+                                           },
+                                           options: {
+                                           title: {
+                                           display: true,
+                                           text: 'グラフ タイトル'
+                                           },
+                                           scales: {
+                                           yAxes: [{
+                                                   ticks: {
+                                                   suggestedMax: 100,
+                                                   suggestedMin: 0,
+                                                   stepSize: 10,
+                                                   callback: function(value, index, values){
+                                                   return  value +  '(単位)'
+                                                   }
+                                                   }
+                                                   }]
+                                           },
+                                           }
+                                           });
+            }
+        </script>
+    </body>
+</html>

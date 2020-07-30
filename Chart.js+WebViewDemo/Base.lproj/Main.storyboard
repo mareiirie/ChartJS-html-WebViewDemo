@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BaseViewController" customModule="Chart_js_WebViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r3p-GM-L5K">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-lf-RTr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWi-Ej-wcP">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                                                <connections>
+                                                    <segue destination="j8F-Bl-rHN" kind="embed" id="IlE-Ae-7UK"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kWi-Ej-wcP" secondAttribute="bottom" id="alf-Mv-j0g"/>
+                                            <constraint firstItem="kWi-Ej-wcP" firstAttribute="top" secondItem="sfy-lf-RTr" secondAttribute="top" id="nWw-Fd-Gdq"/>
+                                            <constraint firstAttribute="trailing" secondItem="kWi-Ej-wcP" secondAttribute="trailing" id="wTo-oe-Tub"/>
+                                            <constraint firstItem="kWi-Ej-wcP" firstAttribute="leading" secondItem="sfy-lf-RTr" secondAttribute="leading" id="ze9-gx-mFL"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-ag-Emh">
+                                        <rect key="frame" x="0.0" y="426" width="414" height="426"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="なんか適当にコンテンツ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imp-Fc-nHn">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="imp-Fc-nHn" firstAttribute="leading" secondItem="fwC-ag-Emh" secondAttribute="leading" id="H50-wv-gLO"/>
+                                            <constraint firstAttribute="trailing" secondItem="imp-Fc-nHn" secondAttribute="trailing" id="aYc-Qf-1A7"/>
+                                            <constraint firstItem="imp-Fc-nHn" firstAttribute="top" secondItem="fwC-ag-Emh" secondAttribute="top" id="mhy-d8-qnK"/>
+                                            <constraint firstAttribute="bottom" secondItem="imp-Fc-nHn" secondAttribute="bottom" id="vpx-Ed-gd3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r3p-GM-L5K" secondAttribute="trailing" id="2JL-Xp-cqN"/>
+                            <constraint firstItem="r3p-GM-L5K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="El8-Mg-s0H"/>
+                            <constraint firstItem="r3p-GM-L5K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lwN-Ox-gzi"/>
+                            <constraint firstAttribute="bottom" secondItem="r3p-GM-L5K" secondAttribute="bottom" id="x3R-IH-kli"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sampleContainerView" destination="sfy-lf-RTr" id="mMS-hp-mDq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+        <!--Container For Web View-->
+        <scene sceneID="hmm-Xb-6Eq">
+            <objects>
+                <viewController id="j8F-Bl-rHN" customClass="ContainerForWebView" customModule="Chart_js_WebViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lRh-G6-U0G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bTt-4f-kMK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsb-G0-Kwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-40"/>
+        </scene>
+    </scenes>
+</document>
