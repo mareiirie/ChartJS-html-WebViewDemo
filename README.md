@@ -1,4 +1,4 @@
-# ChartJS-html-WebViewDemo（リポジトリ/プロジェクト/OSSなどの名前）
+# ChartJS-html-WebViewDemo
 
 Chart.jsをローカルのhtml経由でWebViewに埋め込むデモアプリ
 
